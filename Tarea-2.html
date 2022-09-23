@@ -11,9 +11,9 @@
 
 <meta name="author" content="Jesús Cristóbal Salinas Villanueva" />
 
-<meta name="date" content="2022-09-14" />
+<meta name="date" content="2022-09-23" />
 
-<title>Tarea 1.1</title>
+<title>Tarea 2</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -363,58 +363,37 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Tarea 1.1</h1>
+<h1 class="title toc-ignore">Tarea 2</h1>
 <h4 class="author">Jesús Cristóbal Salinas Villanueva</h4>
-<h4 class="date">2022-09-14</h4>
+<h4 class="date">2022-09-23</h4>
 
 </div>
 
 
-<div id="descripción-de-bd-captación-tradicional-de-banca-múltiple" class="section level1">
-<h1>Descripción de BD: Captación Tradicional de Banca Múltiple</h1>
-<p>La base de datos a utilizar proviene de la página de la <a href="https://www.cnbv.gob.mx/Paginas/PortafolioDeInformacion.aspx">CNBV</a>
-en el apartado de <strong>BANCA MÚLTIPLE: INFORMACIÓN DE LA SITUACIÓN
-FINANCIERA</strong>.</p>
-<p>Se descarga una hoja de cálculo habilitada para macros la cual
-contiene la información del balance general de las distintas
-instituciones financieras en México.</p>
-<p>Nos centraremos en la parte pasiva del balance, en especifico, en la
-<strong>Captación Tradicional</strong>.</p>
-<div id="base-de-datos" class="section level2">
-<h2>Base de Datos</h2>
-<p>La base de datos contiene las siguientes variables numéricas y de
-carácter respectivamente:</p>
-<ul>
-<li><p><strong>Captación Tradicional</strong>, es el dinero depositado
-de los clientes en la institución financiera en cuenta de cheques o
-inversiones, se desglosa en cuatro rubros y cada uno es de tipo numérico
-entero:</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Depósitos de exigibilidad inmediata</strong></p>
-<ul>
-<li>Sin interés</li>
-<li>Con interés</li>
-</ul></li>
-<li><p><strong>Depósitos a Plazo</strong></p>
-<ul>
-<li>Público en general</li>
-<li>Mercado de Dinero</li>
-</ul></li>
-<li><p><strong>Títulos de Crédito Emitidos</strong></p></li>
-<li><p><strong>Cuenta Global de Captación sin
-Movimientos</strong></p></li>
-</ol></li>
-</ul>
-<p>La captación tradicional es la suma de los Depósitos de exigibilidad
-inmediata, Depósitos a Plazo, Títulos de Crédito Emitidos y Cuenta
-Global de Captación sin Movimientos.</p>
-<ul>
-<li><p><strong>Periodo</strong>, muestra los meses que tiene la base, es
-de tipo temporal mensual hasta diciembre 2021.</p></li>
-<li><p><strong>Instituciones</strong>, son las instituciones financieras
-reconocidas por la CNBV en México, es de tipo textual.</p></li>
-</ul>
-</div>
+<div id="modelo-er" class="section level2">
+<h2>Modelo ER</h2>
+<p>flowchart TD; A{Captación Tradicional} — B[Vista]; A{Captación
+Tradicional} — C[Plazo]; A{Captación Tradicional} — D[Estado];
+A{Captación Tradicional} — E[Personalidad]; A{Captación Tradicional} —
+F[Bancos];</p>
+<p>B[Vista] — B1(Cuentas Transaccionales N.2); B[Vista] — B2(No Activas
+Cuentas Transaccionales N.2); B[Vista] — B3(Cuentas Transaccionales
+N.3); B[Vista] — B4(No Activas Cuentas Transaccionales N.3); B[Vista] —
+B5(Cuentas Transaccionales N.4); B[Vista] — B6(No Activas Cuentas
+Transaccionales N.4);</p>
+<p>C[Plazo] — C1(Público en general); C[Plazo] — C2(Mercado de
+Dinero);</p>
+<p>D[Estado] — D1(Clave INEGI); D[Estado] — D2(Municipio); D[Estado] —
+D3(Localidad);</p>
+<p>E[Personalidad] — E1[Física Nacional]; E[Personalidad] — E2[Moral
+Nacional]; E[Personalidad] — E3[Física con Actividad Empresarial
+Nacional]; E[Personalidad] — E4[Física Extranjera]; E[Personalidad] —
+E5[Moral Extranjera];</p>
+<p>F[Bancos] — F1[Clave INEGI]; F[Bancos] — F2[Fecha]; F[Bancos] —
+F3[Sucursal]; F[Bancos] — F4[# de cajeros]; F[Bancos] — F5[Tarjetas de
+crédito];</p>
+<p>G{Tipo de Captación} — B[Vista]; G{Tipo de Captación} — C[Plazo];
+G{Tipo de Captación} — F[Bancos];</p>
 </div>
 
 

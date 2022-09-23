@@ -1,0 +1,49 @@
+---
+title: "Tarea 2"
+author: "Jesús Cristóbal Salinas Villanueva"
+date: '2022-09-23'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Modelo ER
+
+flowchart TD;
+A{Captación Tradicional} --- B[Vista];
+A{Captación Tradicional} --- C[Plazo];
+A{Captación Tradicional} --- D[Estado];
+A{Captación Tradicional} --- E[Personalidad];
+A{Captación Tradicional} --- F[Bancos];
+
+B[Vista] --- B1(Cuentas Transaccionales N.2);
+B[Vista] --- B2(No Activas Cuentas Transaccionales N.2);
+B[Vista] --- B3(Cuentas Transaccionales N.3);
+B[Vista] --- B4(No Activas Cuentas Transaccionales N.3);
+B[Vista] --- B5(Cuentas Transaccionales N.4);
+B[Vista] --- B6(No Activas Cuentas Transaccionales N.4);
+
+C[Plazo] --- C1(Público en general);
+C[Plazo] --- C2(Mercado de Dinero);
+
+D[Estado] --- D1(Clave INEGI);
+D[Estado] --- D2(Municipio);
+D[Estado] --- D3(Localidad);
+
+E[Personalidad] --- E1[Física Nacional];
+E[Personalidad] --- E2[Moral Nacional];
+E[Personalidad] --- E3[Física con Actividad Empresarial Nacional];
+E[Personalidad] --- E4[Física Extranjera];
+E[Personalidad] --- E5[Moral Extranjera];
+
+F[Bancos] --- F1[Clave INEGI];
+F[Bancos] --- F2[Fecha];
+F[Bancos] --- F3[Sucursal];
+F[Bancos] --- F4[# de cajeros];
+F[Bancos] --- F5[Tarjetas de crédito];
+
+G{Tipo de Captación} --- B[Vista];
+G{Tipo de Captación} --- C[Plazo];
+G{Tipo de Captación} --- F[Bancos];

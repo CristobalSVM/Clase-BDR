@@ -1,0 +1,80 @@
+---
+title: "Tarea 3: modelo r"
+author: "Jesús Cristóbal Salinas Villanueva"
+date: '2022-09-29'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+# 1.Esquema
+
+captacion_tradicional(clave_inegi,anio_mes,total)
+tipo_captacion(clave_inegi,anio_mes,tipo_captacion,total)
+bancos(clave_inegi,anio_mes,No_sucursales,No_cajeros,No_tarjetascredito)
+estados(clave_inegi,anio_mes,municipio,localidad)
+personalidad(clave_inegi,anio_mes,tipo_personalidad)
+
+# 2.Diagrama
+
+erDiagram
+          Captacion_tradicional ||--}o Bancos : "tiene"
+          Captacion_tradicional {
+            entero clave_inegi
+            fecha anio_mes
+            entero Total
+         }
+          Bancos {
+            entero clave_inegi
+            fecha anio_mes
+            entero No_sucursales
+            entero No_cajeros
+            entero No_tarjetascredito
+          }
+                    
+          Captacion_tradicional ||--}o Estados : "Tiene"
+          Estados {
+            entero clave_inegi
+            fecha anio_mes
+            texto municipio
+            texto localidad
+          }
+          Captacion_tradicional ||--}o Personalidad : "tiene"
+          Personalidad{
+            entero clave_inegi
+            fecha anio_mes
+            texto tipo_personalidad
+            }
+
+          Captacion_tradicional ||--}o Tipo_Captacion : "tiene"
+          Tipo_Captacion{
+            entero clave_inegi
+            fecha anio_mes
+            texto tipo_captacion
+            entero total
+            
+          }
+
+          Tipo_Captacion o{--}o Personalidad : "tiene"
+          Tipo_Captacion o{--}o Estados : "tiene"
+          Tipo_Captacion o{--}o Bancos : "tiene"
+          
+# 3.Operaciones algebra relacional
+
+    1. **Proyección**
+        - πclave_inegi(Bancos): Para conocer todos los bancos 
+          que maneja la base
+    2.  **Selección**
+        - σclave_inegi_Bancos = 5 (Captacion_tradicional): conocer el saldo de la captación tradicional
+          del banco 5 
+    3.  **Unión**
+        - σclave_inegi_Tipo_captación = vista (Tipo_Captacion) U σclave_inegi_Tipo_captación = Plazo (Tipo_Captacion):
+          Se mostrará el saldo de la captación vista y de la captación plazo
+    4.  **Composición**
+        - πclave_inegi_Bancos = 5 (σclave_inegi_Tipo_captación = vista (Tipo_Captacion) U σclave_inegi_Tipo_captación = Plazo (Tipo_Captacion)):
+          Muestra el saldo de la captación vista y de la captación plazo del banco 5

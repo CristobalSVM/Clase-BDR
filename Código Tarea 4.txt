@@ -1,0 +1,153 @@
+CREATE TABLE captacion_tradicional(	
+  id_banco FLOAT(15),	
+  anio_mes	INT,
+  banco varchar(100),
+  total FLOAT(17,2)	
+  );	
+  
+INSERT INTO captacion_tradicional (id_banco,anio_mes,banco,total) VALUES (2,202206,'ABC Capital',2961874857);
+INSERT INTO captacion_tradicional (id_banco,anio_mes,banco,total) VALUES (4,202206,'Actinver',31444013294);
+INSERT INTO captacion_tradicional (id_banco,anio_mes,banco,total) VALUES (5,202206,'Afirme',76645946505);
+INSERT INTO captacion_tradicional (id_banco,anio_mes,banco,total) VALUES (7,202206,'Autofin',3916863729);
+INSERT INTO captacion_tradicional (id_banco,anio_mes,banco,total) VALUES (8,202206,'Banamex',950325672391);
+INSERT INTO captacion_tradicional (id_banco,anio_mes,banco,total) VALUES (9,202206,'Banca Mifel',51174223852);
+INSERT INTO captacion_tradicional (id_banco,anio_mes,banco,total) VALUES (11,202206,'Banco Azteca',199370923538);
+INSERT INTO captacion_tradicional (id_banco,anio_mes,banco,total) VALUES (12,202206,'Banco Base',23694714669);
+INSERT INTO captacion_tradicional (id_banco,anio_mes,banco,total) VALUES (14,202206,'Banco del Bajío',200867281099);
+INSERT INTO captacion_tradicional (id_banco,anio_mes,banco,total) VALUES (15,202206,'Banco S3',1282145147);
+INSERT INTO captacion_tradicional (id_banco,anio_mes,banco,total) VALUES (17,202206,'BanCoppel',104771263628);
+INSERT INTO captacion_tradicional (id_banco,anio_mes,banco,total) VALUES (18,202206,'Bancrea',19058548206);
+INSERT INTO captacion_tradicional (id_banco,anio_mes,banco,total) VALUES (19,202206,'Bank of America',45717776886);
+INSERT INTO captacion_tradicional (id_banco,anio_mes,banco,total) VALUES (20,202206,'Bank of China',618593);
+INSERT INTO captacion_tradicional (id_banco,anio_mes,banco,total) VALUES (21,202206,'Bankaool',4636413534);
+INSERT INTO captacion_tradicional (id_banco,anio_mes,banco,total) VALUES (22,202206,'Banorte',861288231249);
+INSERT INTO captacion_tradicional (id_banco,anio_mes,banco,total) VALUES (23,202206,'Banregio',124359642420);
+INSERT INTO captacion_tradicional (id_banco,anio_mes,banco,total) VALUES (24,202206,'Bansí',26912167007);
+INSERT INTO captacion_tradicional (id_banco,anio_mes,banco,total) VALUES (27,202206,'BBVA México',1518550613674);
+INSERT INTO captacion_tradicional (id_banco,anio_mes,banco,total) VALUES (28,202206,'BIAfirme',203836824);
+
+
+  CREATE TABLE tipo_captacion(	
+  id_banco FLOAT(15),	
+  anio_mes	INT,
+      banco varchar(100),
+  tipo_captacion_variable VARCHAR(100),	
+  total FLOAT(17,2)	
+  );	
+  
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (2,202206,'ABC Capital','Cuentas de Depositos a Plazo',2867446013);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (2,202206,'ABC Capital','Cuentas Transaccionales de Bajo Riesgo Nivel 2',8498891);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (2,202206,'ABC Capital','Cuentas Transaccionales de Bajo Riesgo Nivel 4',85331534);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (2,202206,'ABC Capital','No Activas.- Cuentas Transaccionales de Bajo Riesgo Nivel 4',598419);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (4,202206,'Actinver','Cuentas de Depositos a Plazo',11489689894);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (4,202206,'Actinver','Cuentas Transaccionales de Bajo Riesgo Nivel 2',133855);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (4,202206,'Actinver','Cuentas Transaccionales de Bajo Riesgo Nivel 4',19950232220);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (4,202206,'Actinver','No Activas.- Cuentas Transaccionales de Bajo Riesgo Nivel 2',3199);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (4,202206,'Actinver','No Activas.- Cuentas Transaccionales de Bajo Riesgo Nivel 4',3954126);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (5,202206,'Afirme','Cuentas de Depositos a Plazo',36784472648);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (5,202206,'Afirme','Cuentas Transaccionales de Bajo Riesgo Nivel 2',139138736);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (5,202206,'Afirme','Cuentas Transaccionales de Bajo Riesgo Nivel 4',39722335121);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (7,202206,'Autofin','Cuentas de Depositos a Plazo',3470113971);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (7,202206,'Autofin','Cuentas Transaccionales de Bajo Riesgo Nivel 2',5300191);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (7,202206,'Autofin','Cuentas Transaccionales de Bajo Riesgo Nivel 4',441334874);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (7,202206,'Autofin','No Activas.- Cuentas Transaccionales de Bajo Riesgo Nivel 2',15666);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (7,202206,'Autofin','No Activas.- Cuentas Transaccionales de Bajo Riesgo Nivel 4',99027);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (8,202206,'Banamex','Cuentas de Depositos a Plazo',216590589830);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (8,202206,'Banamex','Cuentas Transaccionales de Bajo Riesgo Nivel 2',7039726923);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (8,202206,'Banamex','Cuentas Transaccionales de Bajo Riesgo Nivel 4',726031987665);
+
+  CREATE TABLE bancos(	
+  id_banco FLOAT(15) ,	
+  anio_mes	INT,
+        banco varchar(100),
+  no_sucursales INT,	
+  no_cajeros INT,	
+  no_tarjetascredito INT	
+  );	
+  	
+    
+INSERT INTO bancos (id_banco,anio_mes,banco,no_sucursales,no_cajeros,no_tarjetascredito) VALUES (5,202206,'Total Banca Múltiple',11786,59436,29758858);
+INSERT INTO bancos (id_banco,anio_mes,banco,no_sucursales,no_cajeros,no_tarjetascredito) VALUES (040138,202206,'ABC Capital',2,3,0);
+INSERT INTO bancos (id_banco,anio_mes,banco,no_sucursales,no_cajeros,no_tarjetascredito) VALUES (040102,202206,'Accendo Banco',0,0,0);
+INSERT INTO bancos (id_banco,anio_mes,banco,no_sucursales,no_cajeros,no_tarjetascredito) VALUES (040133,202206,'Actinver',47,0,0);
+INSERT INTO bancos (id_banco,anio_mes,banco,no_sucursales,no_cajeros,no_tarjetascredito) VALUES (040062,202206,'Afirme',171,1866,72239);
+INSERT INTO bancos (id_banco,anio_mes,banco,no_sucursales,no_cajeros,no_tarjetascredito) VALUES (040103,202206,'American Express',0,0,0);
+INSERT INTO bancos (id_banco,anio_mes,banco,no_sucursales,no_cajeros,no_tarjetascredito) VALUES (040128,202206,'Autofin',13,21,0);
+INSERT INTO bancos (id_banco,anio_mes,banco,no_sucursales,no_cajeros,no_tarjetascredito) VALUES (040002,202206,'Banamex',1255,8980,7440944);
+INSERT INTO bancos (id_banco,anio_mes,banco,no_sucursales,no_cajeros,no_tarjetascredito) VALUES (040042,202206,'Banca Mifel',80,102,7943);
+INSERT INTO bancos (id_banco,anio_mes,banco,no_sucursales,no_cajeros,no_tarjetascredito) VALUES (040131,202206,'Banco Ahorro Famsa',0,0,0);
+INSERT INTO bancos (id_banco,anio_mes,banco,no_sucursales,no_cajeros,no_tarjetascredito) VALUES (040127,202206,'Banco Azteca',1995,1973,1011552);
+INSERT INTO bancos (id_banco,anio_mes,banco,no_sucursales,no_cajeros,no_tarjetascredito) VALUES (040145,202206,'Banco Base',18,0,0);
+INSERT INTO bancos (id_banco,anio_mes,banco,no_sucursales,no_cajeros,no_tarjetascredito) VALUES (040146,202206,'Banco Bicentenario',0,0,0);
+INSERT INTO bancos (id_banco,anio_mes,banco,no_sucursales,no_cajeros,no_tarjetascredito) VALUES (040030,202206,'Banco del Bajío',311,720,70360);
+INSERT INTO bancos (id_banco,anio_mes,banco,no_sucursales,no_cajeros,no_tarjetascredito) VALUES (040160,202206,'Banco S3',0,0,0);
+INSERT INTO bancos (id_banco,anio_mes,banco,no_sucursales,no_cajeros,no_tarjetascredito) VALUES (040134,202206,'Banco Wal-Mart',0,0,0);
+INSERT INTO bancos (id_banco,anio_mes,banco,no_sucursales,no_cajeros,no_tarjetascredito) VALUES (040137,202206,'BanCoppel',1276,1768,4390272);
+INSERT INTO bancos (id_banco,anio_mes,banco,no_sucursales,no_cajeros,no_tarjetascredito) VALUES (040152,202206,'Bancrea',14,14,0);
+INSERT INTO bancos (id_banco,anio_mes,banco,no_sucursales,no_cajeros,no_tarjetascredito) VALUES (040106,202206,'Bank of America',1,0,0);
+INSERT INTO bancos (id_banco,anio_mes,banco,no_sucursales,no_cajeros,no_tarjetascredito) VALUES (040159,202206,'Bank of China',0,0,0);
+
+    
+  CREATE TABLE estados(	
+    id_banco FLOAT(15) ,	
+    anio_mes	INT,
+    
+          banco varchar(100),
+estado varchar(100),
+    municipio VARCHAR (30),	
+    localidad VARCHAR (30)	
+    );	
+  
+  
+  INSERT INTO estados (id_banco,anio_mes,banco,estado,municipio,localidad) VALUES (2,202206,'ABC Capital','CIUDAD DE MEXICO','MIGUEL HIDALGO','MIGUEL HIDALGO');
+INSERT INTO estados (id_banco,anio_mes,banco,estado,municipio,localidad) VALUES (2,202206,'ABC Capital','NUEVO LEON','SAN PEDRO GARZA GARCIA','SAN PEDRO GARZA GARCIA');
+INSERT INTO estados (id_banco,anio_mes,banco,estado,municipio,localidad) VALUES (4,202206,'Actinver','CIUDAD DE MEXICO','MIGUEL HIDALGO','MIGUEL HIDALGO');
+INSERT INTO estados (id_banco,anio_mes,banco,estado,municipio,localidad) VALUES (5,202206,'Afirme','AGUASCALIENTES','AGUASCALIENTES','AGUASCALIENTES');
+INSERT INTO estados (id_banco,anio_mes,banco,estado,municipio,localidad) VALUES (5,202206,'Afirme','BAJA CALIFORNIA NORTE','ENSENADA','ENSENADA');
+INSERT INTO estados (id_banco,anio_mes,banco,estado,municipio,localidad) VALUES (5,202206,'Afirme','BAJA CALIFORNIA NORTE','TIJUANA','TIJUANA');
+INSERT INTO estados (id_banco,anio_mes,banco,estado,municipio,localidad) VALUES (5,202206,'Afirme','CAMPECHE','CAMPECHE','CAMPECHE');
+INSERT INTO estados (id_banco,anio_mes,banco,estado,municipio,localidad) VALUES (5,202206,'Afirme','CHIHUAHUA','CHIHUAHUA','CHIHUAHUA');
+INSERT INTO estados (id_banco,anio_mes,banco,estado,municipio,localidad) VALUES (5,202206,'Afirme','CHIHUAHUA','DELICIAS','DELICIAS');
+INSERT INTO estados (id_banco,anio_mes,banco,estado,municipio,localidad) VALUES (5,202206,'Afirme','CHIHUAHUA','JUAREZ','JUAREZ');
+INSERT INTO estados (id_banco,anio_mes,banco,estado,municipio,localidad) VALUES (5,202206,'Afirme','CIUDAD DE MEXICO','ALVARO OBREGON','ALVARO OBREGON');
+INSERT INTO estados (id_banco,anio_mes,banco,estado,municipio,localidad) VALUES (5,202206,'Afirme','CIUDAD DE MEXICO','AZCAPOTZALCO','AZCAPOTZALCO');
+INSERT INTO estados (id_banco,anio_mes,banco,estado,municipio,localidad) VALUES (5,202206,'Afirme','CIUDAD DE MEXICO','BENITO JUAREZ','BENITO JUAREZ');
+INSERT INTO estados (id_banco,anio_mes,banco,estado,municipio,localidad) VALUES (5,202206,'Afirme','CIUDAD DE MEXICO','CUAJIMALPA DE MORELOS','CUAJIMALPA DE MORELOS');
+INSERT INTO estados (id_banco,anio_mes,banco,estado,municipio,localidad) VALUES (5,202206,'Afirme','CIUDAD DE MEXICO','CUAUHTEMOC','CUAUHTEMOC');
+INSERT INTO estados (id_banco,anio_mes,banco,estado,municipio,localidad) VALUES (5,202206,'Afirme','CIUDAD DE MEXICO','GUSTAVO A. MADERO','GUSTAVO A. MADERO');
+INSERT INTO estados (id_banco,anio_mes,banco,estado,municipio,localidad) VALUES (5,202206,'Afirme','CIUDAD DE MEXICO','IZTACALCO','IZTACALCO');
+INSERT INTO estados (id_banco,anio_mes,banco,estado,municipio,localidad) VALUES (5,202206,'Afirme','CIUDAD DE MEXICO','IZTAPALAPA','IZTAPALAPA');
+INSERT INTO estados (id_banco,anio_mes,banco,estado,municipio,localidad) VALUES (5,202206,'Afirme','CIUDAD DE MEXICO','MIGUEL HIDALGO','MIGUEL HIDALGO');
+INSERT INTO estados (id_banco,anio_mes,banco,estado,municipio,localidad) VALUES (5,202206,'Afirme','CIUDAD DE MEXICO','TLALPAN','TLALPAN');
+
+  
+  
+    CREATE TABLE personalidad(	
+          id_banco FLOAT(15) ,	
+    anio_mes	INT,
+            banco varchar(100),
+
+      tipo_personalidad VARCHAR (100)	
+      );	
+	
+INSERT INTO personalidad (id_banco,anio_mes,banco,tipo_personalidad) VALUES (2,'202206','ABC Capital','Fisica nacional');
+INSERT INTO personalidad (id_banco,anio_mes,banco,tipo_personalidad) VALUES (2,'202206','ABC Capital','Moral nacional');
+INSERT INTO personalidad (id_banco,anio_mes,banco,tipo_personalidad) VALUES (4,'202206','Actinver','Fisica nacional');
+INSERT INTO personalidad (id_banco,anio_mes,banco,tipo_personalidad) VALUES (4,'202206','Actinver','Moral nacional');
+INSERT INTO personalidad (id_banco,anio_mes,banco,tipo_personalidad) VALUES (5,'202206','Afirme','Fisica actividad empresarial nacional');
+INSERT INTO personalidad (id_banco,anio_mes,banco,tipo_personalidad) VALUES (5,'202206','Afirme','Fisica nacional');
+INSERT INTO personalidad (id_banco,anio_mes,banco,tipo_personalidad) VALUES (5,'202206','Afirme','Moral nacional');
+INSERT INTO personalidad (id_banco,anio_mes,banco,tipo_personalidad) VALUES (7,'202206','Autofin','Fisica nacional');
+INSERT INTO personalidad (id_banco,anio_mes,banco,tipo_personalidad) VALUES (7,'202206','Autofin','Moral nacional');
+INSERT INTO personalidad (id_banco,anio_mes,banco,tipo_personalidad) VALUES (8,'202206','Banamex','Fisica actividad empresarial nacional');
+INSERT INTO personalidad (id_banco,anio_mes,banco,tipo_personalidad) VALUES (8,'202206','Banamex','Fisica nacional');
+INSERT INTO personalidad (id_banco,anio_mes,banco,tipo_personalidad) VALUES (8,'202206','Banamex','Moral nacional');
+INSERT INTO personalidad (id_banco,anio_mes,banco,tipo_personalidad) VALUES (9,'202206','Banca Mifel','Fisica actividad empresarial nacional');
+INSERT INTO personalidad (id_banco,anio_mes,banco,tipo_personalidad) VALUES (9,'202206','Banca Mifel','Fisica extranjera');
+INSERT INTO personalidad (id_banco,anio_mes,banco,tipo_personalidad) VALUES (9,'202206','Banca Mifel','Fisica nacional');
+INSERT INTO personalidad (id_banco,anio_mes,banco,tipo_personalidad) VALUES (9,'202206','Banca Mifel','Moral extranjera');
+INSERT INTO personalidad (id_banco,anio_mes,banco,tipo_personalidad) VALUES (9,'202206','Banca Mifel','Moral nacional');
+INSERT INTO personalidad (id_banco,anio_mes,banco,tipo_personalidad) VALUES (11,'202206','Banco Azteca','Fisica nacional');
+INSERT INTO personalidad (id_banco,anio_mes,banco,tipo_personalidad) VALUES (11,'202206','Banco Azteca','Moral nacional');
+INSERT INTO personalidad (id_banco,anio_mes,banco,tipo_personalidad) VALUES (12,'202206','Banco Base','Fisica actividad empresarial nacional');
+

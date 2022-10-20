@@ -1,0 +1,142 @@
+---
+title: "Tarea 5"
+author: "Jesús Cristóbal Salinas Villanueva"
+date: '2022-10-20'
+output:
+  html_document: default
+  pdf_document: default
+---
+
+**Base a trabajar**
+
+  CREATE TABLE tipo_captacion(	
+  id_banco FLOAT(15) PRIMARY KEY,
+  anio_mes	INT,
+  banco varchar(100),
+  tipo_captacion_variable VARCHAR(100),	
+  total FLOAT(17,2)	
+  );	
+
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (2,202206,'ABC Capital','Cuentas de Depositos a Plazo',2867446013);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (2,202206,'ABC Capital','Cuentas Transaccionales de Bajo Riesgo Nivel 2',8498891);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (2,202206,'ABC Capital','Cuentas Transaccionales de Bajo Riesgo Nivel 4',85331534);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (2,202206,'ABC Capital','No Activas.- Cuentas Transaccionales de Bajo Riesgo Nivel 4',598419);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (4,202206,'Actinver','Cuentas de Depositos a Plazo',11489689894);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (4,202206,'Actinver','Cuentas Transaccionales de Bajo Riesgo Nivel 2',133855);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (4,202206,'Actinver','Cuentas Transaccionales de Bajo Riesgo Nivel 4',19950232220);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (4,202206,'Actinver','No Activas.- Cuentas Transaccionales de Bajo Riesgo Nivel 2',3199);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (4,202206,'Actinver','No Activas.- Cuentas Transaccionales de Bajo Riesgo Nivel 4',3954126);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (5,202206,'Afirme','Cuentas de Depositos a Plazo',36784472648);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (5,202206,'Afirme','Cuentas Transaccionales de Bajo Riesgo Nivel 2',139138736);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (5,202206,'Afirme','Cuentas Transaccionales de Bajo Riesgo Nivel 4',39722335121);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (7,202206,'Autofin','Cuentas de Depositos a Plazo',3470113971);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (7,202206,'Autofin','Cuentas Transaccionales de Bajo Riesgo Nivel 2',5300191);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (7,202206,'Autofin','Cuentas Transaccionales de Bajo Riesgo Nivel 4',441334874);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (7,202206,'Autofin','No Activas.- Cuentas Transaccionales de Bajo Riesgo Nivel 2',15666);
+INSERT INTO tipo_captacion (id_banco,anio_mes,banco,tipo_captacion_variable,total) VALUES (7,202206,'Autofin','No Activas.- Cuentas Transaccionales de Bajo Riesgo Nivel 4',99027);
+
+
+
+>**1- CONTEO DE FRECUENCIAS O MEDIA**
+
+>Frecuencias
+
+SELECT COUNT(banco) as numero, banco
+
+FROM tipo_captacion
+
+group by banco
+
+
+>Media
+
+SELECT AVG(total)
+
+from tipo_captacion
+
+
+>Media por tipo de banco y tipo de captacion
+
+SELECT banco, tipo_captacion_variable, AVG(total)
+
+from tipo_captacion
+
+group by banco, tipo_captacion_variable
+
+>**2- Mínimos y Máximos**
+
+SELECT banco, MIN(total) as minimo, MAX(total) as maximo
+from tipo_captacion
+group by banco
+
+>**3- Cuantil distinto a la mediana**
+
+
+
+SELECT floor(COUNT(total)/4) as Q1_piso, ceil(COUNT(total)/4) as Q1_techo 
+FROM tipo_captacion
+
+Select sum(q1)/2
+from(
+  
+SELECT max(total) as q1
+FROM(
+SELECT total
+from tipo_captacion
+ORDER by total
+limit 5) As A
+
+union all
+  
+SELECT MAX(total) as q1
+FROM(
+SELECT total
+from tipo_captacion
+ORDER by total
+limit 4) As B
+  
+) AS C
+
+
+>**4- Moda**
+ 
+select banco, frecuencia 
+
+from (
+
+select count(banco) as frecuencia, banco
+                        
+from tipo_captacion
+							  
+group by banco
+
+) As A
+							  
+where frecuencia = 5
+
+group by banco
+
+>**Solucion en linea**
+
+SELECT count(banco), banco
+FROM tipo_captacion
+GROUP BY banco
+HAVING count(banco) = ( select max(frecuencia) 
+                        from (select count(banco) as frecuencia, banco
+							  from tipo_captacion
+							  group by banco) As A)
+
+
+>**5- Hallazgos, dificultades, soluciones en linea, etc.**
+
+>Dificultad:
+
+3) Use dos consultas separadas para calcular primero los cuantiles y despues filtrar los numeros de "en medio" y hacer el promedio entre ellos.
+
+>Solucion en linea:
+
+4) Usar un HAVING ya que esta funcion aplica una condicion a los datos argupados usando la variable en cuestion, la condicion que utilicé fue el primer código donde ordené las frecuencias de mayor a menor por banco.
+
+
+
+
